@@ -8,6 +8,7 @@ import time
 
 browser = webdriver.Firefox()
 
+#scrape youtube urls
 def search(msg,msgTitle):
 
 	time.sleep(5)
@@ -30,8 +31,13 @@ def search(msg,msgTitle):
 	
 file = open('playlist11.txt','r')
 
+#list format
+# Singer1 - SongTitle1
+# Singer2 - SongTitle2
+
 for line in file:
 	para = line.split(" - ")
 	para[1] = para[1].rstrip()
+	
 	
 	search(para[0],para[1])
